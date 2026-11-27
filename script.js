@@ -63,7 +63,7 @@
     }
   });
 
-  // Form submission handler: supports Formspree/Web3Forms (via data-endpoint) or Netlify Forms
+  // Form submission handler: supports Formspree (data-endpoint), Netlify Forms, or direct coach email (data-mailto)
   const form = document.getElementById("contact-form");
   const statusEl = document.getElementById("form-status");
 
@@ -73,49 +73,58 @@
       statusEl.classList.remove("is-error");
 
       const endpoint = (form.getAttribute("data-endpoint") || "").trim();
-      const isLocal =
-        window.location.protocol === "file:" ||
-        window.location.hostname === "localhost" ||
-        window.location.hostname === "127.0.0.1";
+      const mailtoRecipients = (form.getAttribute("data-mailto") || "").trim();
+      const formData = new FormData(form);
 
-      if (isLocal && !endpoint) {
-        statusEl.textContent =
-          "Local preview mode: connect Netlify Forms or a Formspree endpoint (data-endpoint) so inquiries deliver to your team email.";
-        form.reset();
-        return;
-      }
-
-      try {
-        const formData = new FormData(form);
-        let response;
-
-        if (endpoint) {
-          response = await fetch(endpoint, {
+      if (endpoint) {
+        try {
+          const response = await fetch(endpoint, {
             method: "POST",
             headers: { Accept: "application/json" },
             body: formData,
           });
-        } else {
-          const body = new URLSearchParams(formData).toString();
-          response = await fetch("/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body,
-          });
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          statusEl.textContent =
+            "Thank you! Your message for The Goonies #8777 has been received.";
+          form.reset();
+          return;
+        } catch (_err) {
+          // Fall through to mailto if available
         }
-
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}`);
-        }
-
-        statusEl.textContent =
-          "Thank you! Your message for The Goonies #8777 has been received.";
-        form.reset();
-      } catch (_err) {
-        statusEl.classList.add("is-error");
-        statusEl.textContent =
-          "Online form submission is not yet connected on this host. Please mail sponsorship details to Brownstown Middle School (Attn: 8777 – Goonies).";
       }
+
+      if (mailtoRecipients) {
+        const name = String(formData.get("contact_name") || "").trim();
+        const business = String(formData.get("business_name") || "").trim();
+        const email = String(formData.get("email") || "").trim();
+        const phone = String(formData.get("phone") || "").trim();
+        const inquiryType = String(formData.get("inquiry_type") || "Website Inquiry").trim();
+        const website = String(formData.get("website") || "").trim();
+        const message = String(formData.get("message") || "").trim();
+
+        const subject = `FTC Team #8777 — ${inquiryType}${business ? ` (${business})` : ""}`;
+        const lines = [
+          `Inquiry Type: ${inquiryType}`,
+          `Contact Person: ${name}`,
+          business ? `Business / Organization: ${business}` : null,
+          `Email: ${email}`,
+          phone ? `Phone: ${phone}` : null,
+          website ? `Website: ${website}` : null,
+          "",
+          "Message:",
+          message,
+        ].filter((line) => line !== null);
+
+        const mailtoUrl = `mailto:${mailtoRecipients}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join("\n"))}`;
+        window.location.href = mailtoUrl;
+        statusEl.textContent =
+          "Opening your email client addressed to Coaches Desiderio Villalobos and Christopher Sims. If it did not open, email villald@wbsdweb.com or simsc@wbsdweb.com directly.";
+        return;
+      }
+
+      statusEl.classList.add("is-error");
+      statusEl.textContent =
+        "Please email our coaches directly at villald@wbsdweb.com or simsc@wbsdweb.com.";
     });
   }
 })();

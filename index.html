@@ -67,7 +67,7 @@
       <nav class="primary-nav" id="primary-nav" aria-label="Primary Navigation">
         <ul class="nav-list">
           <li><a href="#about">Who We Are</a></li>
-          <li><a href="#team">Team Structure</a></li>
+          <li><a href="#team">Parents &amp; Roles</a></li>
           <li><a href="#season">Robot &amp; Season</a></li>
           <li><a href="#sponsors">Sponsors</a></li>
           <li><a href="#fundraising">Support Us</a></li>
@@ -219,43 +219,136 @@
       </div>
     </section>
 
-    <!-- Team Organization Section -->
+    <!-- Team Roles & Parent Guide Section -->
     <section class="section section--dark" id="team">
       <div class="container">
-        <div class="section-header section-header--light">
-          <p class="section-eyebrow section-eyebrow--light">Team Organization</p>
-          <h2 class="section-title">How Team #8777 Operates</h2>
-          <p class="section-intro">
-            Like an engineering organization, our 15 middle school students divide into specialized
-            sub-teams supported by 3 student mentors and 2 coaches.
-          </p>
+        <div class="section-header-row">
+          <div class="section-header section-header--light">
+            <p class="section-eyebrow section-eyebrow--light">Parent &amp; Family Guide · Team Structure</p>
+            <h2 class="section-title">Every Student Has a Role on Team #8777</h2>
+            <p class="section-intro">
+              FTC robotics gives middle schoolers many overlapping ways to contribute—even when they
+              are not on the competition drive team. During practices, every member is expected to
+              participate, share ideas, and help shape every aspect of competing.
+            </p>
+          </div>
+          <div class="section-header-row__action">
+            <a
+              href="assets/docs/Goonies-8777-Basic-Information-Sheet.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn--outline-light"
+            >
+              Parent Info Sheet (PDF)
+            </a>
+          </div>
         </div>
 
-        <div class="subteams-grid">
+        <!-- Parent Quick-Reference Schedule -->
+        <div class="parent-schedule-grid" aria-label="Season and Practice Schedule for Parents">
+          <div class="schedule-card">
+            <span class="schedule-card__label">Season</span>
+            <strong>Sept – Early Dec</strong>
+            <p>Runs from the second week of school until early December.</p>
+          </div>
+          <div class="schedule-card">
+            <span class="schedule-card__label">Practices</span>
+            <strong>2× / Week · 2 Hours</strong>
+            <p>Typically twice a week after school, and daily for 2 hours during competition weeks.</p>
+          </div>
+          <div class="schedule-card">
+            <span class="schedule-card__label">Location &amp; Bus</span>
+            <strong>Robotics Shop at WUE</strong>
+            <p>Practices run directly after school, with students bused from BMS to the robotics shop at the WUE.</p>
+          </div>
+          <div class="schedule-card">
+            <span class="schedule-card__label">Competitions</span>
+            <strong>2 Qualifiers + States</strong>
+            <p>Typically 2 qualifier events in November; State Championship is a 2-day weekend event in early to mid-December if qualified.</p>
+          </div>
+        </div>
+
+        <!-- 7 Overlapping Student Roles -->
+        <div class="roles-grid">
           <article class="dark-card">
-            <span class="dark-card__tag">Sub-Team</span>
-            <h3>Programming</h3>
+            <span class="dark-card__tag">Software</span>
+            <h3>Coding</h3>
             <p>
-              Develops autonomous routines, driver-controlled tele-op mappings, motor and servo tuning,
-              and sensor integration to make the robot reliable under match pressure.
+              Writes the Autonomous code that runs the robot on its own and programs the driver
+              controllers for the Driver-Operated match period—including on-the-spot code adjustments
+              at competitions.
             </p>
           </article>
 
           <article class="dark-card">
-            <span class="dark-card__tag">Sub-Team</span>
-            <h3>Mechanical</h3>
+            <span class="dark-card__tag">Hardware</span>
+            <h3>Build Team</h3>
             <p>
-              Prototypes, fabricates, and assembles our mecanum drivetrain, scoring mechanisms, and
-              custom 3D-printed components while maintaining the robot in the competition pit.
+              Builds the competition robot from the ground up to meet strict FTC size limits and game
+              challenges, and sets up the practice field in the shop.
+            </p>
+          </article>
+
+          <article class="dark-card dark-card--wide">
+            <span class="dark-card__tag">On-Field Competition</span>
+            <h3>Drive Team</h3>
+            <p>
+              Runs the robot during matches and participates in competition Drive Team meetings. Each
+              match relies on four coordinated roles:
+            </p>
+            <div class="subrole-list">
+              <div class="subrole-item">
+                <strong>Driver</strong>
+                <span>Steers and positions the robot across the field.</span>
+              </div>
+              <div class="subrole-item">
+                <strong>Operator</strong>
+                <span>Controls the arm, intake, or scoring mechanisms.</span>
+              </div>
+              <div class="subrole-item">
+                <strong>Drive Coach</strong>
+                <span>Calls strategy and directs plays during matches.</span>
+              </div>
+              <div class="subrole-item">
+                <strong>Human Player</strong>
+                <span>Alliance member who interacts directly with field elements.</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="dark-card">
+            <span class="dark-card__tag">Match Readiness</span>
+            <h3>Pit Crew</h3>
+            <p>
+              Ensures the robot stays in working order throughout competitions—tightening screws,
+              checking connections, and inspecting the robot before and after every match.
             </p>
           </article>
 
           <article class="dark-card">
-            <span class="dark-card__tag">Sub-Team</span>
-            <h3>Business &amp; Strategy</h3>
+            <span class="dark-card__tag">Alliance Strategy</span>
+            <h3>Scouting</h3>
             <p>
-              Manages sponsorships, community outreach, pit presentation, judging portfolios, and match
-              strategy so the team is prepared both technically and operationally.
+              Watches other teams compete to learn their strengths and what they can offer an
+              alliance, while connecting with neighboring teams across the event.
+            </p>
+          </article>
+
+          <article class="dark-card">
+            <span class="dark-card__tag">Documentation</span>
+            <h3>Engineering Notebook</h3>
+            <p>
+              Works together as a team to track every design decision, build iteration, test, and
+              practice session throughout the season.
+            </p>
+          </article>
+
+          <article class="dark-card">
+            <span class="dark-card__tag">Judging Presentation</span>
+            <h3>Slideshow</h3>
+            <p>
+              Creates the team presentation that introduces The Goonies to judges and tells the story
+              of how the team engineered their robot.
             </p>
           </article>
         </div>
@@ -399,17 +492,24 @@
 
         <div class="sponsors-grid">
           <article class="sponsor-card">
-            <div class="sponsor-card__logo-wrap">
-              <img
-                src="assets/images/sponsor-wbsd.png"
-                alt="Woodhaven-Brownstown School District Logo"
-                loading="lazy"
-              />
-            </div>
-            <div class="sponsor-card__meta">
-              <span class="sponsor-tier">District Partner</span>
-              <h3>Woodhaven-Brownstown School District</h3>
-            </div>
+            <a
+              href="https://www.mywbsd.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="sponsor-card__link-wrap"
+            >
+              <div class="sponsor-card__logo-wrap">
+                <img
+                  src="assets/images/sponsor-wbsd.png"
+                  alt="Woodhaven-Brownstown School District Logo"
+                  loading="lazy"
+                />
+              </div>
+              <div class="sponsor-card__meta">
+                <span class="sponsor-tier">District Partner</span>
+                <h3>Woodhaven-Brownstown School District</h3>
+              </div>
+            </a>
           </article>
 
           <article class="sponsor-card">
@@ -434,17 +534,24 @@
           </article>
 
           <article class="sponsor-card">
-            <div class="sponsor-card__logo-wrap">
-              <img
-                src="assets/images/sponsor-jibbs-jigs.png"
-                alt="Jibbs Jigs Logo"
-                loading="lazy"
-              />
-            </div>
-            <div class="sponsor-card__meta">
-              <span class="sponsor-tier">Team Sponsor</span>
-              <h3>Jibbs Jigs</h3>
-            </div>
+            <a
+              href="https://www.jibbsjigs.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="sponsor-card__link-wrap"
+            >
+              <div class="sponsor-card__logo-wrap">
+                <img
+                  src="assets/images/sponsor-jibbs-jigs.png"
+                  alt="Jibbs Jigs Logo"
+                  loading="lazy"
+                />
+              </div>
+              <div class="sponsor-card__meta">
+                <span class="sponsor-tier">Team Sponsor</span>
+                <h3>Jibbs Jigs</h3>
+              </div>
+            </a>
           </article>
         </div>
 
@@ -471,8 +578,9 @@
           <article class="way-card">
             <h3>Financial Sponsorship</h3>
             <p>
-              Helps fund robot kits, competition supplies, pit gear, and team shirts. Sponsors receive
-              recognition on our robot, pit banner, team shirts, and website.
+              Helps cover FTC registration fees, regional and state competitions, robot hardware,
+              3D printer filament, and team shirts. Sponsors receive recognition on our robot, pit
+              banner, team shirts, and website.
             </p>
           </article>
           <article class="way-card">
@@ -483,10 +591,11 @@
             </p>
           </article>
           <article class="way-card">
-            <h3>In-Kind Donations</h3>
+            <h3>In-Kind &amp; Raffle Donations</h3>
             <p>
-              Donations of tools, hardware, 3D printing supplies, or vendor discounts help us stretch
-              our budget further and keep students building.
+              We are specifically seeking items for fundraising raffle baskets (merchandise, food,
+              gift cards, and local goods), as well as donations of materials or vendor discounts to
+              help stretch our budget.
             </p>
           </article>
         </div>
@@ -497,9 +606,9 @@
             <div class="budget-card__header">
               <div>
                 <h3>Season Fundraising Breakdown</h3>
-                <p>Specific equipment and team items we are actively raising funds for:</p>
+                <p>Specific registration, competition, and equipment items we are raising funds for this season:</p>
               </div>
-              <span class="budget-total-badge">Goal: $3,462.98</span>
+              <span class="budget-total-badge">Goal: $2,150.00</span>
             </div>
 
             <div class="table-wrap">
@@ -514,46 +623,52 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Mecanum Drivetrain Kit</td>
+                    <td>Registration Fee</td>
+                    <td class="num">1</td>
+                    <td class="num">$350.00</td>
+                    <td class="num">$350.00</td>
+                  </tr>
+                  <tr>
+                    <td>Competition Registration</td>
                     <td class="num">2</td>
-                    <td class="num">$470.00</td>
-                    <td class="num">$940.00</td>
+                    <td class="num">$125.00</td>
+                    <td class="num">$250.00</td>
                   </tr>
                   <tr>
-                    <td>Pit Banner</td>
+                    <td>State Competition (if qualified)</td>
                     <td class="num">1</td>
-                    <td class="num">$185.00</td>
-                    <td class="num">$185.00</td>
-                  </tr>
-                  <tr>
-                    <td>Pit Table Cloth</td>
-                    <td class="num">1</td>
-                    <td class="num">$200.00</td>
-                    <td class="num">$200.00</td>
+                    <td class="num">$250.00</td>
+                    <td class="num">$250.00</td>
                   </tr>
                   <tr>
                     <td>Team Shirts</td>
-                    <td class="num">72</td>
-                    <td class="num">$17.50</td>
-                    <td class="num">$1,260.00</td>
+                    <td class="num">25</td>
+                    <td class="num">$18.00</td>
+                    <td class="num">$450.00</td>
                   </tr>
                   <tr>
-                    <td>3D Printer</td>
-                    <td class="num">2</td>
-                    <td class="num">$339.99</td>
-                    <td class="num">$679.98</td>
+                    <td>3D Printer (filament)</td>
+                    <td class="num">10</td>
+                    <td class="num">$30.00</td>
+                    <td class="num">$300.00</td>
                   </tr>
                   <tr>
-                    <td>Stackable Toolbox</td>
+                    <td>Odometry Pack</td>
+                    <td class="num">1</td>
+                    <td class="num">$300.00</td>
+                    <td class="num">$300.00</td>
+                  </tr>
+                  <tr>
+                    <td>Food for Competitions</td>
                     <td class="num">2</td>
-                    <td class="num">$99.00</td>
-                    <td class="num">$198.00</td>
+                    <td class="num">$125.00</td>
+                    <td class="num">$250.00</td>
                   </tr>
                 </tbody>
                 <tfoot>
                   <tr>
                     <th scope="row" colspan="3">Total Fundraising Target</th>
-                    <td class="num"><strong>$3,462.98</strong></td>
+                    <td class="num"><strong>$2,150.00</strong></td>
                   </tr>
                 </tfoot>
               </table>
@@ -598,15 +713,24 @@
           <p class="section-eyebrow section-eyebrow--light">Get In Touch</p>
           <h2 class="section-title">Connect With Team #8777</h2>
           <p class="section-intro">
-            Interested in sponsoring The Goonies, mentoring students, donating equipment, or joining
-            Brownstown Middle School robotics? Send us a message and Coach Christopher Sims or a team
-            representative will follow up.
+            Interested in sponsoring The Goonies, donating raffle basket items, mentoring students,
+            or joining Brownstown Middle School robotics? Reach out to our coaches directly or send
+            an inquiry using the form.
           </p>
 
           <div class="contact-details">
             <div class="contact-detail">
-              <span class="contact-detail__label">Team Contact</span>
-              <strong>Christopher Sims</strong>
+              <span class="contact-detail__label">Team Coaches</span>
+              <ul class="coach-list">
+                <li>
+                  <strong>Desiderio Villalobos</strong>
+                  <a href="mailto:villald@wbsdweb.com" class="light-link">villald@wbsdweb.com</a>
+                </li>
+                <li>
+                  <strong>Christopher Sims</strong>
+                  <a href="mailto:simsc@wbsdweb.com" class="light-link">simsc@wbsdweb.com</a>
+                </li>
+              </ul>
             </div>
             <div class="contact-detail">
               <span class="contact-detail__label">School &amp; Location</span>
@@ -638,13 +762,14 @@
           </div>
         </div>
 
-        <!-- Netlify Forms Enabled Inquiry Form -->
+        <!-- Sponsorship & Inquiry Form -->
         <div class="contact-form-card">
           <h3>Sponsorship &amp; Inquiry Form</h3>
           <form
             name="goonies-8777-contact"
             method="POST"
             data-netlify="true"
+            data-mailto="villald@wbsdweb.com,simsc@wbsdweb.com"
             netlify-honeypot="bot-field"
             class="contact-form"
             id="contact-form"
@@ -681,6 +806,7 @@
                 <label for="inquiry-type">How would you like to connect? *</label>
                 <select id="inquiry-type" name="inquiry_type" required>
                   <option value="Financial Sponsorship">Financial Sponsorship</option>
+                  <option value="Raffle Basket Donation">Raffle Basket Donation (Items / Food / Gift Cards)</option>
                   <option value="Mentor Volunteer">Mentor Volunteer</option>
                   <option value="In-Kind Donation">In-Kind Donation / Discount</option>
                   <option value="Student / Parent Inquiry">Student / Parent Inquiry</option>
@@ -730,7 +856,7 @@
 
       <nav class="footer-links" aria-label="Footer Navigation">
         <a href="#about">Who We Are</a>
-        <a href="#team">Team</a>
+        <a href="#team">Parents &amp; Roles</a>
         <a href="#season">Season</a>
         <a href="#sponsors">Sponsors</a>
         <a href="#fundraising">Support Us</a>

@@ -13,7 +13,8 @@ Official static website for **The Goonies**, FIRST® Tech Challenge (FTC) Team #
 - `.nojekyll` — Ensures GitHub Pages serves static files directly without Jekyll processing.
 - `netlify.toml` — Optional Netlify hosting and security/caching header configuration.
 - `assets/images/` — Official team logos, banner, shirt graphics, and cropped sponsor logos.
-- `assets/docs/Goonies-8777-Sponsorship-Packet.pdf` — Downloadable 4-page sponsorship packet.
+- `assets/docs/Goonies-8777-Sponsorship-Packet.pdf` — Downloadable sponsorship letter and season budget.
+- `assets/docs/Goonies-8777-Basic-Information-Sheet.pdf` — Downloadable parent and family guide covering practice schedule, competitions, and student roles.
 
 ## Hosting on GitHub Pages (`goonies8777.github.io` + `goonies8777.com`)
 
