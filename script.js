@@ -23,11 +23,32 @@
     });
   }
 
-  // Lightbox for team gallery images
+  // Lightbox with Prev/Next and keyboard navigation
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
   const lightboxCaption = document.getElementById("lightbox-caption");
+  const lightboxCounter = document.getElementById("lightbox-counter");
   const lightboxClose = document.getElementById("lightbox-close");
+  const lightboxPrev = document.getElementById("lightbox-prev");
+  const lightboxNext = document.getElementById("lightbox-next");
+
+  let activeItems = [];
+  let activeIndex = 0;
+
+  const renderLightbox = () => {
+    if (!lightboxImg || !lightboxCaption || activeItems.length === 0) return;
+    const item = activeItems[activeIndex];
+    lightboxImg.src = item.src;
+    lightboxImg.alt = item.caption;
+    lightboxCaption.textContent = item.caption;
+
+    const hasMultiple = activeItems.length > 1;
+    if (lightboxCounter) {
+      lightboxCounter.textContent = hasMultiple ? `${activeIndex + 1} / ${activeItems.length}` : "";
+    }
+    if (lightboxPrev) lightboxPrev.hidden = !hasMultiple;
+    if (lightboxNext) lightboxNext.hidden = !hasMultiple;
+  };
 
   const closeLightbox = () => {
     if (!lightbox) return;
@@ -35,21 +56,50 @@
     document.body.style.overflow = "";
   };
 
-  document.querySelectorAll("[data-lightbox-src]").forEach((trigger) => {
+  const stepLightbox = (delta) => {
+    if (activeItems.length <= 1) return;
+    activeIndex = (activeIndex + delta + activeItems.length) % activeItems.length;
+    renderLightbox();
+  };
+
+  const triggers = Array.from(document.querySelectorAll("[data-lightbox-src]"));
+  triggers.forEach((trigger) => {
     trigger.addEventListener("click", () => {
       if (!lightbox || !lightboxImg || !lightboxCaption) return;
-      lightboxImg.src = trigger.getAttribute("data-lightbox-src") || "";
-      lightboxImg.alt = trigger.getAttribute("data-lightbox-caption") || "";
-      lightboxCaption.textContent = trigger.getAttribute("data-lightbox-caption") || "";
+
+      const groupName = trigger.getAttribute("data-lightbox-group") || "";
+      const groupTriggers = groupName
+        ? triggers.filter((el) => (el.getAttribute("data-lightbox-group") || "") === groupName)
+        : triggers;
+
+      // Deduplicate by src while preserving gallery order
+      const seen = new Set();
+      activeItems = [];
+      groupTriggers.forEach((el) => {
+        const src = el.getAttribute("data-lightbox-src") || "";
+        const caption = el.getAttribute("data-lightbox-caption") || "";
+        if (src && !seen.has(src)) {
+          seen.add(src);
+          activeItems.push({ src, caption });
+        }
+      });
+
+      const clickedSrc = trigger.getAttribute("data-lightbox-src") || "";
+      activeIndex = Math.max(
+        0,
+        activeItems.findIndex((it) => it.src === clickedSrc)
+      );
+
+      renderLightbox();
       lightbox.hidden = false;
       document.body.style.overflow = "hidden";
       if (lightboxClose) lightboxClose.focus();
     });
   });
 
-  if (lightboxClose) {
-    lightboxClose.addEventListener("click", closeLightbox);
-  }
+  if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
+  if (lightboxPrev) lightboxPrev.addEventListener("click", () => stepLightbox(-1));
+  if (lightboxNext) lightboxNext.addEventListener("click", () => stepLightbox(1));
 
   if (lightbox) {
     lightbox.addEventListener("click", (event) => {
@@ -58,9 +108,10 @@
   }
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && lightbox && !lightbox.hidden) {
-      closeLightbox();
-    }
+    if (!lightbox || lightbox.hidden) return;
+    if (event.key === "Escape") closeLightbox();
+    if (event.key === "ArrowLeft") stepLightbox(-1);
+    if (event.key === "ArrowRight") stepLightbox(1);
   });
 
   // Form submission handler: supports Formspree (data-endpoint), Netlify Forms, or direct coach email (data-mailto)

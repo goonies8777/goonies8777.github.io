@@ -7,12 +7,13 @@ Official static website for **The Goonies**, FIRST® Tech Challenge (FTC) Team #
 
 ## Project Structure
 
-- `index.html` — Responsive website with sections for Who We Are, Team Organization, Robot & Season, Sponsors, Season Fundraising, and Contact/Sponsorship Inquiry.
+- `index.html` — Responsive homepage with sections for Who We Are, Parents & Roles, Robot & Season, Sponsors, Season Fundraising, and Contact/Sponsorship Inquiry.
+- `photos-2025-2026.html` — 2025–2026 season photo album highlights page linking to the full Google Photos album (`https://photos.app.goo.gl/qhLLqhg66otmuC6A7`), with a season switcher ready for future seasons (`photos-2026-2027.html`).
 - `styles.css` — Royal purple (`#55298A`), obsidian black, and metallic silver theme matching the Woodhaven-Brownstown / Goon Squad robotics family.
-- `script.js` — Mobile navigation menu, image gallery lightbox, and form submission handler (works with Netlify Forms or Formspree via `data-endpoint`).
+- `script.js` — Mobile navigation menu, prev/next keyboard lightbox viewer, and form submission handler.
 - `.nojekyll` — Ensures GitHub Pages serves static files directly without Jekyll processing.
 - `netlify.toml` — Optional Netlify hosting and security/caching header configuration.
-- `assets/images/` — Official team logos, banner, shirt graphics, and cropped sponsor logos.
+- `assets/images/` — Official team logos, banner, shirt graphics, cropped sponsor logos, and `season-2025-2026/` highlight photos.
 - `assets/docs/Goonies-8777-Sponsorship-Packet.pdf` — Downloadable sponsorship letter and season budget.
 - `assets/docs/Goonies-8777-Basic-Information-Sheet.pdf` — Downloadable parent and family guide covering practice schedule, competitions, and student roles.
 

@@ -69,6 +69,7 @@
           <li><a href="#about">Who We Are</a></li>
           <li><a href="#team">Parents &amp; Roles</a></li>
           <li><a href="#season">Robot &amp; Season</a></li>
+          <li><a href="photos-2025-2026.html">Photos</a></li>
           <li><a href="#sponsors">Sponsors</a></li>
           <li><a href="#fundraising">Support Us</a></li>
           <li><a href="#contact" class="btn btn--sm btn--primary">Sponsor 8777</a></li>
@@ -472,7 +473,69 @@
                 <span>Team Shirt — Sponsors</span>
               </button>
             </div>
-            <p class="gallery-hint">Click any image to view full size. Robot build photos can be added here each season.</p>
+            <p class="gallery-hint">Click any image to view full size.</p>
+          </div>
+        </div>
+
+        <!-- 2025-2026 Photo Album Preview -->
+        <div class="season-photos-preview">
+          <div class="season-photos-preview__header">
+            <div>
+              <p class="section-eyebrow">Season Photo Archive</p>
+              <h3>2025–2026 Season Highlights</h3>
+              <p>
+                Explore robot builds, regional qualifier matches, playoffs, and award celebrations
+                from our 2025–2026 season.
+              </p>
+            </div>
+            <div class="season-photos-preview__actions">
+              <a href="photos-2025-2026.html" class="btn btn--primary">
+                Open 2025–2026 Photo Album
+              </a>
+              <a
+                href="https://photos.app.goo.gl/qhLLqhg66otmuC6A7"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn--outline-dark"
+              >
+                Full Google Photos Album &rarr;
+              </a>
+            </div>
+          </div>
+
+          <div class="preview-strip">
+            <a href="photos-2025-2026.html" class="preview-thumb">
+              <img
+                src="assets/images/season-2025-2026/01-team-trophy-portrait.jpg"
+                alt="The Goonies 8777 2025–2026 team portrait with trophy"
+                loading="lazy"
+              />
+              <span>2025–2026 Team &amp; Trophy</span>
+            </a>
+            <a href="photos-2025-2026.html" class="preview-thumb">
+              <img
+                src="assets/images/season-2025-2026/02-pit-banner-team.jpg"
+                alt="Team 8777 in the competition pit"
+                loading="lazy"
+              />
+              <span>Competition Pit</span>
+            </a>
+            <a href="photos-2025-2026.html" class="preview-thumb">
+              <img
+                src="assets/images/season-2025-2026/07-robot-on-field.jpg"
+                alt="Team 8777 robot competing on the FTC field"
+                loading="lazy"
+              />
+              <span>On the FTC Field</span>
+            </a>
+            <a href="photos-2025-2026.html" class="preview-thumb">
+              <img
+                src="assets/images/season-2025-2026/05-workbench-build.jpg"
+                alt="Students assembling the competition robot at the workbench"
+                loading="lazy"
+              />
+              <span>Shop Build Sessions</span>
+            </a>
           </div>
         </div>
       </div>
@@ -858,6 +921,7 @@
         <a href="#about">Who We Are</a>
         <a href="#team">Parents &amp; Roles</a>
         <a href="#season">Season</a>
+        <a href="photos-2025-2026.html">Photos</a>
         <a href="#sponsors">Sponsors</a>
         <a href="#fundraising">Support Us</a>
         <a href="https://github.com/goonies8777" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -874,10 +938,15 @@
   <!-- Lightbox Modal -->
   <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Image preview">
     <button type="button" class="lightbox__close" id="lightbox-close" aria-label="Close preview">&times;</button>
+    <button type="button" class="lightbox__nav lightbox__nav--prev" id="lightbox-prev" aria-label="Previous photo">&#8249;</button>
     <figure class="lightbox__figure">
       <img src="" alt="" id="lightbox-img" />
-      <figcaption id="lightbox-caption"></figcaption>
+      <figcaption>
+        <span id="lightbox-caption"></span>
+        <span class="lightbox__counter" id="lightbox-counter"></span>
+      </figcaption>
     </figure>
+    <button type="button" class="lightbox__nav lightbox__nav--next" id="lightbox-next" aria-label="Next photo">&#8250;</button>
   </div>
 
   <script src="script.js"></script>
