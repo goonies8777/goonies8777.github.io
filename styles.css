@@ -1496,6 +1496,16 @@ p:last-child {
   padding: 0.4rem 0.9rem;
   border-radius: 999px;
   text-decoration: none;
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--silver);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.season-pill:hover:not(.is-upcoming) {
+  background: rgba(125, 75, 196, 0.35);
+  border-color: var(--purple-glow);
+  color: var(--white);
 }
 
 .season-pill.is-current {

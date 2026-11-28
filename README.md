@@ -8,7 +8,8 @@ Official static website for **The Goonies**, FIRST® Tech Challenge (FTC) Team #
 ## Project Structure
 
 - `index.html` — Responsive homepage with sections for Who We Are, Parents & Roles, Robot & Season, Sponsors, Season Fundraising, and Contact/Sponsorship Inquiry.
-- `photos-2025-2026.html` — 2025–2026 season photo album highlights page linking to the full Google Photos album (`https://photos.app.goo.gl/qhLLqhg66otmuC6A7`), with a season switcher ready for future seasons (`photos-2026-2027.html`).
+- `photos-2026-2027.html` — Current 2026–2027 season photo album highlights page linking to the full Google Photos album (`https://photos.app.goo.gl/FQ8EyDuB3HuvhgcD8`).
+- `photos-2025-2026.html` — 2025–2026 season photo album highlights page linking to the full Google Photos album (`https://photos.app.goo.gl/qhLLqhg66otmuC6A7`).
 - `styles.css` — Royal purple (`#55298A`), obsidian black, and metallic silver theme matching the Woodhaven-Brownstown / Goon Squad robotics family.
 - `script.js` — Mobile navigation menu, prev/next keyboard lightbox viewer, and form submission handler.
 - `.nojekyll` — Ensures GitHub Pages serves static files directly without Jekyll processing.
